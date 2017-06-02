@@ -26,7 +26,7 @@ main {
   margin-left: 2em;
   margin-right: 2em;
 }
-p {
+.copy {
   color: white;
   text-align: center;
   background-color: black;
@@ -60,4 +60,9 @@ p {
 .info {
   font-size: 23px;
   font-weight: bolder;
+}
+.addc {
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
 }
