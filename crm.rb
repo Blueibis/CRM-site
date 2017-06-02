@@ -1,7 +1,6 @@
 require 'sinatra'
-require_relative 'note'
 require_relative 'contact'
-require 'pry'
+
 
 
 get '/' do

@@ -10,3 +10,9 @@ class Note < ActiveRecord::Base
 end
 
 Note.auto_upgrade!
+#for use in contacts.erb
+#<% Note.all.each do |note| %>
+#<% rightnote = nil %>
+#<% rightnote = "Note: " + note.body if note.contact_id == contact.id %>
+#<%= rightnote %>
+#<% end %>
