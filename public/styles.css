@@ -32,6 +32,7 @@ main {
   background-color: black;
   width: 100%;
   padding: 10px;
+  font-size: 12px;
   }
 .topnav {
   background-color: grey;
@@ -41,13 +42,14 @@ main {
 }
 .link {
   color: white;
+  font-weight: bold;
 }
 .number {
   font-weight: bold;
   border-bottom: solid #4cb3cd;
 }
 .mycontacts {
-  font-weight: normal;
+  font-weight: 500;
   font-size: 20px;
   background-color: salmon;
   padding: 20px;
@@ -65,4 +67,5 @@ main {
   text-decoration: none;
   color: white;
   margin-left: 10px;
+  font-weight: bold;
 }
