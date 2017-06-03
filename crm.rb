@@ -37,6 +37,17 @@ post '/addcontact' do
   Note.create(body: params[:note], written_at: Time.now, contact_id: new_contact.id)
 end
 
+post '/update_contact/:id' do
+  @contacts = Contact.all
+  contact = Contact.find(params[:id])
+  note = Note.find_by(contact_id: params[:id])
+  contact.update(first_name: params[:first_name])
+  contact.update(last_name: params[:last_name])
+  contact.update(email: params[:email])
+  note.update(body: params[:note])
+  erb :contacts
+end
+
 after do
   ActiveRecord::Base.connection.close
 end

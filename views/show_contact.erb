@@ -1,5 +1,11 @@
-<h2 class='cinfo'><%= @contact.first_name %> <%= @contact.last_name %></h2>
-<ul>
-  <li>Email: <%= @contact.email %></li>
-  <li>Note: <%= @note.body %></li>
-</ul>
+<form class="editc" action="/update_contact/<%= @contact.id %>" method="post">
+  First Name:
+  <input type="text" name="first_name" value="<%= @contact.first_name %>"><br>
+  Last Name:
+  <input type="text" name="last_name" value="<%= @contact.last_name %>"><br>
+  Email:
+  <input type="text" name="email" value="<%= @contact.email %>"><br>
+  Note:
+  <input type="text" name="note" value="<%= @note.body %>"><br>
+  <input type="submit" value="Edit">
+</form>
