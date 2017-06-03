@@ -33,8 +33,10 @@ get '/add_contact' do
 end
 
 post '/addcontact' do
+  @contacts = Contact.all
   new_contact = Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
   Note.create(body: params[:note], written_at: Time.now, contact_id: new_contact.id)
+  erb :contacts
 end
 
 post '/update_contact/:id' do
@@ -45,6 +47,15 @@ post '/update_contact/:id' do
   contact.update(last_name: params[:last_name])
   contact.update(email: params[:email])
   note.update(body: params[:note])
+  erb :contacts
+end
+
+get '/delete/:id' do
+  @contacts = Contact.all
+  contact = Contact.find(params[:id])
+  note = Note.find_by(contact_id: params[:id])
+  contact.delete
+  note.delete
   erb :contacts
 end
 

@@ -1,11 +1,14 @@
 <form class="editc" action="/update_contact/<%= @contact.id %>" method="post">
-  First Name:
-  <input type="text" name="first_name" value="<%= @contact.first_name %>"><br>
-  Last Name:
-  <input type="text" name="last_name" value="<%= @contact.last_name %>"><br>
-  Email:
-  <input type="text" name="email" value="<%= @contact.email %>"><br>
-  Note:
-  <input type="text" name="note" value="<%= @note.body %>"><br>
-  <input type="submit" value="Edit">
+  <fieldset>
+    <legend>Editing you contact</legend>
+    First Name:<br>
+    <input type="text" name="first_name" value="<%= @contact.first_name %>"><br>
+    Last Name:<br>
+    <input type="text" name="last_name" value="<%= @contact.last_name %>"><br>
+    Email:<br>
+    <input type="text" name="email" value="<%= @contact.email %>"><br>
+    Note:<br>
+    <input type="text" name="note" value="<%= @note.body %>"><br>
+    <input type="submit" value="Edit">
+  </fieldset>
 </form>

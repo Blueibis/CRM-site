@@ -26,6 +26,14 @@ main {
   margin-left: 2em;
   margin-right: 2em;
 }
+fieldset {
+  color: #222222;
+  margin: 10px 0px;
+}
+input {
+  margin-top: 5px;
+}
+
 .copy {
   color: white;
   text-align: center;
@@ -68,4 +76,18 @@ main {
   color: white;
   margin-left: 10px;
   font-weight: bold;
+}
+
+input[type=text] {
+  width: 20em;
+  padding: 5px;
+  border: 1.5px solid #727171;
+  border-radius: 4px;
+  outline: none;
+}
+input[type=text]:focus {
+  border: 1.5px solid #333;
+}
+input[type=submit] {
+  padding: 5px;
 }
