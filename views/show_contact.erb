@@ -1,4 +1,5 @@
 <form class="editc" action="/update_contact/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
   <fieldset>
     <legend>Editing you contact</legend>
     First Name:<br>

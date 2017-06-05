@@ -17,6 +17,11 @@ get '/about_me' do
   erb :about
 end
 
+get '/contacts/add_contact' do
+  @contacts = Contact.all
+  erb :add_contact
+end
+
 get '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   @note = Note.find_by(contact_id: params[:id].to_i)
@@ -27,19 +32,14 @@ get '/contacts/:id' do
   end
 end
 
-get '/add_contact' do
-  @contacts = Contact.all
-  erb :add_contact
-end
-
 post '/addcontact' do
   @contacts = Contact.all
   new_contact = Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
   Note.create(body: params[:note], written_at: Time.now, contact_id: new_contact.id)
-  erb :contacts
+  redirect to('/contacts')
 end
 
-post '/update_contact/:id' do
+put '/update_contact/:id' do
   @contacts = Contact.all
   contact = Contact.find(params[:id])
   note = Note.find_by(contact_id: params[:id])
@@ -47,16 +47,16 @@ post '/update_contact/:id' do
   contact.update(last_name: params[:last_name])
   contact.update(email: params[:email])
   note.update(body: params[:note])
-  erb :contacts
+  redirect to('/contacts')
 end
 
-get '/delete/:id' do
+delete '/delete/:id' do
   @contacts = Contact.all
   contact = Contact.find(params[:id])
   note = Note.find_by(contact_id: params[:id])
   contact.delete
   note.delete
-  erb :contacts
+  redirect to('/contacts')
 end
 
 after do

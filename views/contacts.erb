@@ -4,7 +4,11 @@
   <% @contacts.each do |contact| %>
   <li class="contacts">
     <span class='info'><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</span><br>
-    <a href="/contacts/<%= contact.id %>" class='edit/delete'>Edit</a> | <a href="/delete/<%= contact.id %>" class='edit/delete'>Delete</a>
+    <form class="" action="/delete/<%= contact.id %>" method="post">
+      <a href="/contacts/<%= contact.id %>" class='edit/delete'>Edit</a> |
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" class="deletec" name="delete-contact" value="Delete">
+    </form>
   </li>
   <% end %>
 </ul>

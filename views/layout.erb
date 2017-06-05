@@ -9,9 +9,12 @@
     <header>
       <h1>Bitmaker CRM</h1>
       <nav>
+        <form class="search" action="/contacts" method="get">
+          <input type="search" name="search" placeholder="Search..." class="searchwidth">
+        </form>
         <ul>
           <li class='topnav'><a href='/' class="link">Home</a></li>
-          <li class='topnav'><a href="/contacts" class="link">My contacts</a> <a href='/add_contact' class="addc">|&nbsp; Add a contact</a></li>
+          <li class='topnav'><a href="/contacts" class="link">My contacts</a> <a href='/contacts/add_contact' class="addc">|&nbsp; Add a contact</a></li>
           <li class='topnav'><a href="/about_me" class="link">About</a></li>
         </ul>
       </nav>
